@@ -11,7 +11,7 @@ public class Problema {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		double salario, prestacaoDeServico, ganhoDeCapital, gastosMedicos, gastosEducacionais, impostoSalario, impostoServicos, impostoGanhoDeCapital;
+		double salario, prestacaoDeServico, ganhoDeCapital, gastosMedicos, gastosEducacionais, impostoSalario, impostoServicos, impostoGanhoDeCapital, maximoDedutivel, gastosDedutiveis, impostoTotal;
 		
 		System.out.println("Renda anual com salário: ");
 		salario = sc.nextDouble();
@@ -44,6 +44,10 @@ public class Problema {
 			impostoGanhoDeCapital = 0;
 		}
 		
+		impostoTotal = impostoSalario + impostoServicos + impostoGanhoDeCapital;
+		maximoDedutivel = impostoTotal * 0.30;
+		gastosDedutiveis = gastosMedicos + gastosEducacionais;
+		
 		System.out.println();
 		System.out.println("RELATÓRIO DE IMPOSTO DE RENDA");
 		System.out.println();
@@ -51,6 +55,10 @@ public class Problema {
 		System.out.printf("Imposto sobre salário: %.2f%n", impostoSalario);
 		System.out.printf("Imposto sobre serviços: %.2f%n", impostoServicos);
 		System.out.printf("Imposto sobre ganho de capital: %.2f%n", impostoGanhoDeCapital);
+		System.out.println();
+		System.out.println("DEDUÇÕES:");
+		System.out.printf("Máximo dedutível: %.2f%n", maximoDedutivel);
+		System.out.printf("Gastos dedutíveis: %.2f%n", gastosDedutiveis);
 
 	}
 
